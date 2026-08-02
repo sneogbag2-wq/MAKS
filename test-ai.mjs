@@ -1,0 +1,1 @@
+import { getGlobalHighestTransactionsSync } from './src/services/customerService.js'; console.log('START'); try { console.log(getGlobalHighestTransactionsSync({ type: 'TAHSILAT', limit: 5 })); } catch(e) { console.error('ERROR:', e.message, e.stack); }
