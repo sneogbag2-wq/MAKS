@@ -1,0 +1,169 @@
+.mascot-avatar-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  animation: mascotFloat 3.5s ease-in-out infinite;
+  user-select: none;
+}
+
+/* Sizes */
+.mascot-avatar-wrapper.size-small {
+  width: 32px;
+  height: 32px;
+}
+
+.mascot-avatar-wrapper.size-medium {
+  width: 40px;
+  height: 40px;
+}
+
+.mascot-avatar-wrapper.size-large {
+  width: 52px;
+  height: 52px;
+}
+
+.mascot-avatar-wrapper.size-xlarge {
+  width: 68px;
+  height: 68px;
+}
+
+.mascot-avatar-wrapper.size-hero {
+  width: 84px;
+  height: 84px;
+}
+
+.mascot-svg-graphic {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* Soft Golden Glow Ring behind Mascot */
+.mascot-glow-ring {
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 146, 46, 0.4) 0%, rgba(255, 215, 0, 0) 70%);
+  animation: glowPulse 2.5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Antenna Sparkle */
+.antenna-gem {
+  animation: antennaSparkle 1.8s ease-in-out infinite alternate;
+}
+
+/* Eye Blinking Animation */
+.mascot-eyes-group {
+  transform-origin: center 47px;
+  animation: eyeBlink 4.2s infinite ease-in-out;
+}
+
+/* Ear Twitching Animation */
+.ear-l {
+  transform-origin: 30px 30px;
+  animation: earTwitchL 6s infinite ease-in-out;
+}
+
+.ear-r {
+  transform-origin: 70px 30px;
+  animation: earTwitchR 6s infinite ease-in-out;
+}
+
+/* Typing / Thinking Animation State */
+.mascot-avatar-wrapper.is-typing {
+  animation: mascotThinking 1s ease-in-out infinite alternate;
+}
+
+.mascot-avatar-wrapper.is-typing .mascot-glow-ring {
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.7) 0%, rgba(201, 146, 46, 0) 75%);
+  animation: glowPulseFast 0.8s infinite alternate;
+}
+
+/* Keyframes */
+@keyframes mascotFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes mascotThinking {
+  0% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(-6px) rotate(2deg);
+  }
+}
+
+@keyframes eyeBlink {
+  0%, 46%, 52%, 100% {
+    transform: scaleY(1);
+  }
+  49% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes glowPulseFast {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes antennaSparkle {
+  0% {
+    fill: #FFD700;
+    filter: drop-shadow(0 0 2px #FFD700);
+  }
+  100% {
+    fill: #FFFFFF;
+    filter: drop-shadow(0 0 8px #FFD700);
+  }
+}
+
+@keyframes earTwitchL {
+  0%, 90%, 100% {
+    transform: rotate(0deg);
+  }
+  93% {
+    transform: rotate(-8deg);
+  }
+  96% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes earTwitchR {
+  0%, 90%, 100% {
+    transform: rotate(0deg);
+  }
+  93% {
+    transform: rotate(8deg);
+  }
+  96% {
+    transform: rotate(-4deg);
+  }
+}
